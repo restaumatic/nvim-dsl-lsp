@@ -78,9 +78,9 @@ end
 
 function M.setup()
   vim.api.nvim_create_user_command('DslLocation', M.DslLocation, {})
+  vim.api.nvim_create_user_command('DslOpenFileAtLine', M.OpenFileAtLine, {})
   vim.api.nvim_set_keymap('n', 'gy', '<cmd>DslLocation<CR>', { noremap = true, silent = true })
-
-  vim.api.nvim_set_keymap('n', 'gf', ':lua require("dsl-lsp").OpenFileAtLine()<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', 'gf', '<cmd>DslOpenFileAtLine<CR>', { noremap = true, silent = true })
 end
 
 return M
